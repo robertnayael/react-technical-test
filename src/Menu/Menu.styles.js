@@ -54,17 +54,6 @@ export const ItemList = styled.ul`
     }
 `;
 
-export const ToggleButton = styled.button`
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 3;
-    border: none;
-    width: 2rem;
-    height: 2rem;
-    background: #fff;
-`;
-
 /**
  * Header component with brand logo
  */

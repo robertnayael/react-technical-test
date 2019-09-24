@@ -6,12 +6,13 @@ import {
     Header,
     ItemList,
     MenuContents,
-    MenuContentsWrapper,
-    ToggleButton,
+    MenuContentsWrapper
 } from './Menu.styles';
 import Item from './Item';
 import Footer from './Footer';
+import ToggleButton from './ToggleButton';
 import groups from './groups';
+
 
 const Menu = ({
     children,
@@ -27,7 +28,10 @@ const Menu = ({
 
     return (
         <Container>
-            <ToggleButton onClick={toggleOpen}/>
+            <ToggleButton
+                onClick={toggleOpen}
+                isMenuOpen={isOpen}
+            />
             <MenuContentsWrapper isOpen={isOpen}>
                 <Transition in={isOpen} timeout={500}>
                     {transitionState => (
