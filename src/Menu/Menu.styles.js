@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 /**
  * Wraps the whole menu, including the open/close button. Note that
@@ -19,6 +19,9 @@ export const MenuContents = styled.div`
     width: 100vw;
     height: 100vh;
     background: #ee5f63;
+    pointer-events: ${p => p.isOpen ? 'auto' :  'none'};
+    transform: scale(0);
+    animation: ${p => getAnimation(p.transitionState)} 500ms forwards;
 `;
 
 /**
@@ -35,3 +38,38 @@ export const ItemList = styled.ul`
         grid-template-rows: 1fr 1fr 1fr;
     }
 `;
+
+export const ToggleButton = styled.button`
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 3;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    background: #fff;
+`;
+
+const menuEnter = keyframes`
+    0%   {
+        transform: translateX(100%) skew(45deg, 0deg);
+    }
+    100% {
+        transform: none;
+    }
+`;
+
+const menuExit = keyframes`
+    0%   {
+        transform: none;
+    }
+    100% {
+        transform: scale(0);
+    }
+`;
+
+const getAnimation = (transitionState) => ({
+    'entering': menuEnter,
+    'entered': menuEnter,
+    'exiting': menuExit,
+}[transitionState] || 'none');
