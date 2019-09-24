@@ -1,24 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { MenuWrapper } from './Menu.styles';
+import {
+    Container,
+    ItemList,
+    MenuContents,
+} from './Menu.styles';
 import Item from './Item';
 import groups from './groups';
 
 const Menu = ({children}) => {
+
     return (
-        <MenuWrapper>
-            {children}
-        </MenuWrapper>
+        <Container>
+            <MenuContents>
+                    <ItemList>
+                        {children}
+                    </ItemList>
+            </MenuContents>
+        </Container>
     );
 };
-
-
-
-
-
-
-
-
 
 Menu.Item = Item;
 Menu.groups = groups;
