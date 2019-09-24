@@ -4,7 +4,11 @@ import Menu from './Menu';
 
 function App() {
   return (
-    <Menu>
+    <Menu
+        footerCaption="We're here to help"
+        footerPhone="+44 (0) 20 8050 3459"
+        footerEmail="support@awaymo.com"
+    >
       <Menu.Item
           label="Profile"
           group={Menu.groups.main}

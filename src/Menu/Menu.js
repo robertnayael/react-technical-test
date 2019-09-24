@@ -10,10 +10,16 @@ import {
     ToggleButton,
 } from './Menu.styles';
 import Item from './Item';
+import Footer from './Footer';
 import groups from './groups';
 
-const Menu = ({children}) => {
-    const [ isOpen, setIsOpen ] = useState(false);
+const Menu = ({
+    children,
+    footerCaption,
+    footerPhone,
+    footerEmail
+}) => {
+    const [ isOpen, setIsOpen ] = useState(true);
     const toggleOpen = useCallback(
         () => setIsOpen(isOpen => !isOpen),
         []
@@ -30,6 +36,11 @@ const Menu = ({children}) => {
                             <ItemList>
                                 {children}
                             </ItemList>
+                            <Footer
+                                caption={footerCaption}
+                                phone={footerPhone}
+                                email={footerEmail}
+                            />
                         </MenuContents>
                     )}
                 </Transition>
