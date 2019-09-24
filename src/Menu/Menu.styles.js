@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
+import logoImg from './assets/awaymoFullWhite.svg';
+
 /**
  * Wraps the whole menu, including the open/close button. Note that
  * it has zero width and height, as all of its children are absolutely
@@ -31,6 +33,7 @@ export const MenuContents = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
+    padding:  0 2rem 2rem 2rem;
     background: #ee5f63;
     transform: scale(0);
     animation: ${p => getAnimation(p.transitionState)} 500ms forwards;
@@ -60,6 +63,33 @@ export const ToggleButton = styled.button`
     width: 2rem;
     height: 2rem;
     background: #fff;
+`;
+
+/**
+ * Header component with brand logo
+ */
+export const Header = styled.header`
+    width: 100%;
+    height: 4rem;
+    border-bottom: 1px solid #fff;
+    position: relative;
+
+    &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 2rem;
+        width: 10.3rem;
+        background: url('${logoImg}') no-repeat;
+        background-size: 100%;
+    }
+
+    @media (min-width: 1000px)  {
+        border-width: 2px;
+    }
 `;
 
 const menuEnter = keyframes`

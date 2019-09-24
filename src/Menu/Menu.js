@@ -3,6 +3,7 @@ import { Transition } from 'react-transition-group';
 
 import {
     Container,
+    Header,
     ItemList,
     MenuContents,
     MenuContentsWrapper,
@@ -22,15 +23,16 @@ const Menu = ({children}) => {
         <Container>
             <ToggleButton onClick={toggleOpen}/>
             <MenuContentsWrapper isOpen={isOpen}>
-            <Transition in={isOpen} timeout={500}>
-                {transitionState => (
-                    <MenuContents transitionState={transitionState} isOpen={isOpen} >
-                        <ItemList>
-                            {children}
-                        </ItemList>
-                    </MenuContents>
-                )}
-            </Transition>
+                <Transition in={isOpen} timeout={500}>
+                    {transitionState => (
+                        <MenuContents transitionState={transitionState} isOpen={isOpen} >
+                            <Header/>
+                            <ItemList>
+                                {children}
+                            </ItemList>
+                        </MenuContents>
+                    )}
+                </Transition>
             </MenuContentsWrapper>
         </Container>
     );
