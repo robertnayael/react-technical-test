@@ -12,14 +12,26 @@ export const Container = styled.nav`
 `;
 
 /**
- * Wraps everything except the open/close button
+ * Wraps everything except the open/close button. Makes sure
+ * that menu contents never "leak" outside of this container,
+ * which might result in unwanted scrollbards.
  */
-export const MenuContents = styled.div`
+export const MenuContentsWrapper = styled.div`
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background: #ee5f63;
+    overflow: hidden;
     pointer-events: ${p => p.isOpen ? 'auto' :  'none'};
+`;
+
+/**
+ * Wraps everything except the open/close button.
+ */
+export const MenuContents = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ee5f63;
     transform: scale(0);
     animation: ${p => getAnimation(p.transitionState)} 500ms forwards;
 `;

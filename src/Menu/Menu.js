@@ -5,6 +5,7 @@ import {
     Container,
     ItemList,
     MenuContents,
+    MenuContentsWrapper,
     ToggleButton,
 } from './Menu.styles';
 import Item from './Item';
@@ -20,6 +21,7 @@ const Menu = ({children}) => {
     return (
         <Container>
             <ToggleButton onClick={toggleOpen}/>
+            <MenuContentsWrapper isOpen={isOpen}>
             <Transition in={isOpen} timeout={500}>
                 {transitionState => (
                     <MenuContents transitionState={transitionState} isOpen={isOpen} >
@@ -29,6 +31,7 @@ const Menu = ({children}) => {
                     </MenuContents>
                 )}
             </Transition>
+            </MenuContentsWrapper>
         </Container>
     );
 };
