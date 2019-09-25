@@ -43,7 +43,13 @@ export const MenuContents = styled.div`
  * List containing all menu links
  */
 export const ItemList = styled.ul`
-    @media only screen and (min-width: 1000px)  {
+    @media (max-width: 999px) {
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+    }
+    @media (min-width: 1000px) {
         margin-top: 3rem;
         width: 70%;
         display: grid;
