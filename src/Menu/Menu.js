@@ -44,9 +44,15 @@ const Menu = ({
                 aria-label="Main menu"
                 role="navigation"
             >
-                <Transition in={isOpen} timeout={500}>
+                <Transition
+                    in={isOpen}
+                    timeout={500}
+                >
                     {transitionState => (
-                        <MenuContents transitionState={transitionState} isOpen={isOpen} >
+                        <MenuContents
+                            transitionState={transitionState}
+                            isOpen={isOpen}
+                        >
                             <Header/>
                             <UserInfo
                                 name={userName}
