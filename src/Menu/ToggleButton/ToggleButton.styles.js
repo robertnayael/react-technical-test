@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -12,7 +13,10 @@ export const Button = styled.button`
     background: transparent;
 `;
 
-export const Icon = styled(FontAwesomeIcon)`
+export const Icon = styled(
+    // This is to avoid passing `isMenuOpen` prop to the underlying component:
+    ({ isMenuOpen, ...props}) => <FontAwesomeIcon {...props} />
+)`
     width: 100% !important; /* TODO: check if size can be changed in a more elegant way */
     height: 100% !important;
     transition: transform 200ms;
