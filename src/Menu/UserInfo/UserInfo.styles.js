@@ -12,15 +12,17 @@ export const Wrapper = styled.div`
         grid-template-areas:
             "avatar fullname"
             "avatar balance";
-        width: 20rem;
-        height: 4rem;
+        width: 30rem;
+        height: 5rem;
         position: absolute;
-        top: 8vh;
+        top: 10vh;
         left: 36vw;
         left: calc((100vw * 0.35) + 0.5rem);
         z-index: 2;
         font-weight: 600;
         margin: 0;
+        padding: 0 0 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     }
     color: #fff;
     font-size: 1.3em;
