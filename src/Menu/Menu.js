@@ -38,7 +38,12 @@ const Menu = ({
                 onClick={toggleOpen}
                 isMenuOpen={isOpen}
             />
-            <MenuContentsWrapper isOpen={isOpen}>
+            <MenuContentsWrapper
+                isOpen={isOpen}
+                aria-hidden={!isOpen}
+                aria-label="Main menu"
+                role="navigation"
+            >
                 <Transition in={isOpen} timeout={500}>
                     {transitionState => (
                         <MenuContents transitionState={transitionState} isOpen={isOpen} >

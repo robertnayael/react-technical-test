@@ -5,7 +5,10 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Button, Icon } from './ToggleButton.styles';
 
 const ToggleButton = ({ isMenuOpen, onClick }) => (
-    <Button onClick={onClick}>
+    <Button
+        onClick={onClick}
+        aria-expanded={isMenuOpen}
+    >
         <Icon
             isMenuOpen={isMenuOpen}
             icon={isMenuOpen ? faTimes : faBars}
