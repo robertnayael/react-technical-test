@@ -26,9 +26,10 @@ export const StyledItem = styled.li.attrs(({ group, orderInGroup: order }) => ({
         display: ${p => p.noMobile ? 'none' : 'flex'};
         align-items: center;
         font-size: 1.25em;
-        line-height: 4rem;
-        &:not(:last-child) {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        line-height: 1.25rem;
+        flex-grow: 1;
+        &:not(:first-child) {
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
         }
     }
 
