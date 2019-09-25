@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
     StyledFooter,
@@ -14,6 +15,12 @@ const Footer = ({ caption, phone, email }) => (
         <Email href={`mailto:${email}`}>{email}</Email>
     </StyledFooter>
 );
+
+Footer.propTypes = {
+    caption: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+};
 
 /** Strips all characters except digits and plus sign */
 const formatPhone = phoneNo => phoneNo.replace(/[^\d+]/g, '');

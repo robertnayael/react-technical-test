@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import PropTypes from 'prop-types';
 import { Transition } from 'react-transition-group';
 
 import {
@@ -62,6 +63,17 @@ const Menu = ({
             </MenuContentsWrapper>
         </Container>
     );
+};
+
+Menu.propTypes = {
+    children: PropTypes.arrayOf(PropTypes.element),
+    footerCaption: PropTypes.string.isRequired,
+    footerPhone: PropTypes.string.isRequired,
+    footerEmail: PropTypes.string.isRequired,
+    userName: PropTypes.string.isRequired,
+    userLastName: PropTypes.string.isRequired,
+    userBalance: PropTypes.string.isRequired,
+    userAvatar: PropTypes.string.isRequired,
 };
 
 Menu.Item = Item;

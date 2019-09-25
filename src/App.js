@@ -90,6 +90,7 @@ function App() {
           orderInGroup={2}
           noMobile
       />
+      <div/>
     </Menu>
   );
 }
