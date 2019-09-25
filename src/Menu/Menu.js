@@ -25,7 +25,7 @@ const Menu = ({
     userBalance,
     userAvatar,
 }) => {
-    const [ isOpen, setIsOpen ] = useState(true);
+    const [ isOpen, setIsOpen ] = useState(false);
     const toggleOpen = useCallback(
         () => setIsOpen(isOpen => !isOpen),
         []
