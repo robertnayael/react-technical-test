@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import groups from '../groups';
 
@@ -19,16 +20,40 @@ export const StyledItem = styled.li.attrs(({ group, orderInGroup: order }) => ({
     topOffset: group === groups.sideBottom,
 }))`
     color: #fff;
-    font-weight: 900;
-    font-size: 2em;
-    line-height: 3rem;
     white-space: nowrap;
-    display: ${p => p.noMobile ? 'none' : 'block'};
-    @media only screen and (min-width: 1000px)  {
+
+    @media (max-width: 999px)  {
+        display: ${p => p.noMobile ? 'none' : 'flex'};
+        align-items: center;
+        font-size: 1.25em;
+        line-height: 4rem;
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        }
+    }
+
+    @media (min-width: 1000px)  {
+        display: ${p => p.noMobile ? 'none' : 'block'};
+        font-size: 2em;
+        line-height: 3rem;
+        font-weight: 900;
         display: block;
         grid-column: ${p => p.column};
         grid-row: ${p => p.row};
         transform: translateY(${p => p.topOffset ? 0.5 : 0}em);
+    }
+`;
+
+export const Icon = styled(FontAwesomeIcon)`
+    display: block;
+    margin-right: 0.75rem;
+    width: 1.25rem !important; /* TODO: check if size can be changed in a more elegant way */
+    height: 1.25rem !important;
+    & * {
+        fill: $fff;
+    }
+    @media (min-width: 1000px) {
+        display: none;
     }
 `;
 
