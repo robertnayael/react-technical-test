@@ -61,7 +61,7 @@ export const ItemList = styled.ul`
 export const Header = styled.header`
     width: 100%;
     height: 4rem;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
     position: relative;
 
     &:before {

@@ -9,7 +9,7 @@ export const StyledFooter = styled.footer`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 1px solid #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
     padding-top: 2rem;
     @media (min-width: 1000px)  {
         bottom: 2rem;
