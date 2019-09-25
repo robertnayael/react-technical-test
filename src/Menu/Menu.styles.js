@@ -44,6 +44,7 @@ export const MenuContents = styled.div`
  */
 export const ItemList = styled.ul`
     @media only screen and (min-width: 1000px)  {
+        margin-top: 3rem;
         width: 70%;
         display: grid;
         grid-template-columns: 1fr 1fr;

@@ -21,6 +21,7 @@ export const StyledItem = styled.li.attrs(({ group, orderInGroup: order }) => ({
     color: #fff;
     font-weight: 900;
     font-size: 2em;
+    line-height: 3rem;
     white-space: nowrap;
     display: ${p => p.noMobile ? 'none' : 'block'};
     @media only screen and (min-width: 1000px)  {
