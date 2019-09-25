@@ -11,6 +11,7 @@ import {
 import Item from './Item';
 import Footer from './Footer';
 import ToggleButton from './ToggleButton';
+import UserInfo from './UserInfo';
 import groups from './groups';
 
 
@@ -18,7 +19,11 @@ const Menu = ({
     children,
     footerCaption,
     footerPhone,
-    footerEmail
+    footerEmail,
+    userName,
+    userLastName,
+    userBalance,
+    userAvatar,
 }) => {
     const [ isOpen, setIsOpen ] = useState(true);
     const toggleOpen = useCallback(
@@ -37,6 +42,12 @@ const Menu = ({
                     {transitionState => (
                         <MenuContents transitionState={transitionState} isOpen={isOpen} >
                             <Header/>
+                            <UserInfo
+                                name={userName}
+                                lastName={userLastName}
+                                balance={userBalance}
+                                avatar={userAvatar}
+                            />
                             <ItemList>
                                 {children}
                             </ItemList>

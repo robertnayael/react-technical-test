@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Menu from './Menu';
+import avatar from './avatar.png';
 
 function App() {
   return (
@@ -8,6 +9,10 @@ function App() {
         footerCaption="We're here to help"
         footerPhone="+44 (0) 20 8050 3459"
         footerEmail="support@awaymo.com"
+        userName="Dominik"
+        userLastName="Biel"
+        userBalance="£ 1,500.00"
+        userAvatar={avatar}
     >
       <Menu.Item
           label="Profile"

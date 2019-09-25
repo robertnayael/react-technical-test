@@ -76,7 +76,7 @@ export const Header = styled.header`
         background-size: 100%;
     }
 
-    @media (min-width: 1000px)  {
+    @media (min-width: 1000px) {
         border-width: 2px;
     }
 `;
